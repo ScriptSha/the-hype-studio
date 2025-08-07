@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
-
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig: NextConfig = {
   output: "export",
-  assetPrefix: '/the-hype-studio/', // Replace with your GitHub repo name
-  basePath: '/the-hype-studio',     // Same here
+  assetPrefix: isProd ? '/the-hype-studio/' : '',
+  basePath: isProd ? '/the-hype-studio' : '',
   images: {
     unoptimized: true,
   },
