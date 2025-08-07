@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  assetPrefix: '/the-hype-studio/', // Replace with your GitHub repo name
-  basePath: '/the-hype-studio',     // Same here
+  assetPrefix: '/hype-studio-deploy/', // Replace with your GitHub repo name
+  basePath: '/hype-studio-deploy',     // Same here
   images: {
     unoptimized: true,
   },
