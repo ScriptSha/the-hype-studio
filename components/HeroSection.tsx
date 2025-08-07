@@ -24,14 +24,14 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-bold mb-8">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 mt-12 max-w-5xl mx-auto">
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 mt-12">
           <span className="bg-gradient-to-r from-[#C81D77] to-[#6710C2] bg-clip-text text-transparent">
             Create Your
           </span>
           <br />
           <span className="text-white">Own Vibe</span>
-        </h1>
+        </h1>py-
         
         <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
           The Hype Studio is Pune's premier creative space for dancers, actors, and content creators. 
@@ -68,7 +68,7 @@ export default function HeroSection() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-700/50">
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+            <div className="text-3xl md:text-4xl font-bold text-white mb-2">250+</div>
             <div className="text-gray-400">Happy Artists</div>
           </div>
           <div className="text-center">

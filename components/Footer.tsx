@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { locationData } from '../lib/locationData';
 
 export default function Footer() {
+   const { studio } = locationData;
+
   return (
     <footer className="bg-black text-white py-16 relative overflow-hidden">
       {/* Animated Background */}
@@ -30,18 +33,20 @@ export default function Footer() {
               Create your own vibe with us.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-[#C81D77] hover:to-[#6710C2] rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
-                <i className="ri-facebook-fill text-lg"></i>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-[#C81D77] hover:to-[#6710C2] rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
-                <i className="ri-instagram-line text-lg"></i>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-[#C81D77] hover:to-[#6710C2] rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
-                <i className="ri-youtube-line text-lg"></i>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-[#C81D77] hover:to-[#6710C2] rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer">
-                <i className="ri-linkedin-fill text-lg"></i>
-              </a>
+              {studio.socialMedia.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-[#C81D77] hover:to-[#6710C2] rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer`}
+                    title={social.handle}
+                  >
+                    <i className={`${social.icon} text-lg group-hover:scale-110 transition-transform duration-300`}></i>
+                  </a>
+                ))}
+              
+        
             </div>
           </div>
 
@@ -97,7 +102,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <i className="ri-mail-line text-[#C81D77] mr-3"></i>
-                <p className="text-gray-400 text-sm">info@thehypestudio.com</p>
+                <p className="text-gray-400 text-sm">thehypestudio@gmail.com</p>
               </div>
               <div className="flex items-center">
                 <i className="ri-time-line text-[#C81D77] mr-3"></i>
@@ -130,7 +135,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            2024 The Hype Studio. All rights reserved.
+           @ {new Date().getFullYear()} The Hype Studio. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link href="#" className="text-gray-500 hover:text-pink-400 text-sm transition-colors duration-300 cursor-pointer">
